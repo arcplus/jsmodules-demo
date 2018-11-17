@@ -71,6 +71,16 @@ const x = require("./moduleB");
 2. 判断文件夹`/root/src/moduleB`是否存在；若存在，找到`package.json`文件里的主模块`main`（比如：`{"main":"lib/mainModule.js"}`），若找到，则导入`/root/src/moduleB/lib/mainModule.js`
 3. 判断`/root/src/moduleB/index.js`文件是否存在，若存在，则导入此文件
 
+## TypeScript
+
+### ts的能力
+
+- 编写代码过程中的强类型检查
+- 面向接口编程
+- 模块支持，可以通过编译选项(`--moduleResolution`)的设置编译为node的模块解析方式或es6 modules方式
+- JS文件中代码的类型检查([支持通过JSDoc进行JS代码的类型检查](https://github.com/Microsoft/TypeScript/wiki/JSDoc-support-in-JavaScript))
+
+typescript官方提供了[从JS迁移到TS的指南](https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html)
 
 
 ## 参考资料
@@ -79,3 +89,5 @@ const x = require("./moduleB");
 - [JS Modules](https://developers.google.cn/web/fundamentals/primers/modules)
 - [Universal Module Definition](https://github.com/umdjs/umd)
 - [ES modules: A cartoon deep-dive](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)
+- [typescript中文文档站](https://www.tslang.cn/docs/home.html)
+- [TS快速上手样例](https://www.typescriptlang.org/samples/index.html)
