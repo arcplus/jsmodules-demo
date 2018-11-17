@@ -58,6 +58,19 @@ function require(name) {
 }
 ```
 
+### [node中模块解析](https://www.typescriptlang.org/docs/handbook/module-resolution.html#node)
+
+
+示例：
+
+```js
+// file /root/src/moduleA.js
+const x = require("./moduleB");
+```
+1. 判断是否 `/root/src/moduleB.js`文件是否存在，若存在，则导入此文件
+2. 判断文件夹`/root/src/moduleB`是否存在；若存在，找到`package.json`文件里的主模块`main`（比如：`{"main":"lib/mainModule.js"}`），若找到，则导入`/root/src/moduleB/lib/mainModule.js`
+3. 判断`/root/src/moduleB/index.js`文件是否存在，若存在，则导入此文件
+
 
 
 ## 参考资料
