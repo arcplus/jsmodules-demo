@@ -1,5 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const vueloader = require('vue-loader');
 
 module.exports = {
     entry: './src/index.ts',
@@ -16,9 +17,18 @@ module.exports = {
                 options: {
                     loaders: {
                         'scss': 'vue-style-loader!css-loader!sass-loader',
-                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+                        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
                     }
                 }
+            },
+            { 
+                // add this even if there is no css file at all, or you cannot parse css style in vue files
+                // https://stackoverflow.com/questions/50822212/webpack-you-may-need-an-appropriate-loader-to-handle-this-file-type-with-sue
+                test: /\.css$/,
+                use: [
+                  'vue-style-loader',
+                  'css-loader'
+                ]
             },
             {
                 test: /\.tsx?$/,
@@ -36,6 +46,9 @@ module.exports = {
             'vue$': 'vue/dist/vue.esm.js'
         }
     },
+    plugins: [
+        new vueloader.VueLoaderPlugin()
+    ],
     devServer: {
         historyApiFallback: true,
         noInfo: true
