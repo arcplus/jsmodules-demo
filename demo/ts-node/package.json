@@ -8,7 +8,7 @@
     "tsc": "tsc",
     "build": "tsc",
     "start": "tsc && node ./dist/index.js",
-    "dev": "./node_modules/.bin/ts-node src/index.ts"
+    "dev": "node --inspect-brk=9898 --nolazy -r ts-node/register ./src/index.ts"
   },
   "keywords": [
     "ts",
