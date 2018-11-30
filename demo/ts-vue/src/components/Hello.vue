@@ -17,10 +17,13 @@ export default Vue.extend({
     },
     methods: {
         increment() {
-            this.enthusiasm++
+            this.add(1)
         },
         decrement() {
-            this.enthusiasm--
+            this.add(-1)
+        },
+        add(num: number) {
+            this.enthusiasm+=num
         }
     },
     computed: {
