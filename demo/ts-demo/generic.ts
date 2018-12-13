@@ -18,3 +18,5 @@ interface IdentityFn {
 let g: IdentityFn = identity;
 
 let numberOutput = g(123); // number
+
+let res = loggingIdentity([1,2]);
