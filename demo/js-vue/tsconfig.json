@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "noEmit": true,
+        "sourceMap": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noImplicitAny": false,
+        "module": "esNext",
+        "moduleResolution": "node",
+        "target": "es6",
+        "allowJs": true,
+        "checkJs": true
+    },
+    "lib": [
+      "ES2015",
+      "dom"
+    ],
+    "include": [
+        "./src/**/*"
+    ]
+}

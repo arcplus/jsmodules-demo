@@ -1,9 +1,16 @@
-
-// @ts-check
-
+// @ts-ignore
 import Vue from 'vue'
-import AppComponent from './components/AppComponent.vue'
+import App from '@/App.vue'
 
+import router from './router'
+
+Vue.config.productionTip = false
+
+/* eslint-disable no-new */
+// @ts-ignore
 new Vue({
-   render: h => h(AppComponent)
- }).$mount('#app')
+  el: '#app',
+  router,
+  components: { App },
+  template: '<App/>'
+})
