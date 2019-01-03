@@ -1,0 +1,39 @@
+{
+  "name": "ts-node-grpc",
+  "version": "1.0.0",
+  "description": "ts node grpc",
+  "main": "server.ts",
+  "scripts": {
+    "test": "ts-node client.ts",
+    "start": "ts-node server.ts",
+    "genjs": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./proto --grpc_out=./proto --plugin=protoc-gen-grpc=./node_modules/.bin/grpc_tools_node_protoc_plugin -I ./proto ./proto/book.proto",
+    "gents": "protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=./proto -I ./proto ./proto/book.proto",
+    "win:genjs": "grpc_tools_node_protoc.cmd --js_out=import_style=commonjs,binary:.\\proto --grpc_out=.\\proto --plugin=protoc-gen-grpc=.\\node_modules\\.bin\\grpc_tools_node_protoc_plugin.cmd -I .\\proto .\\proto\\book.proto",
+    "win:gents": "protoc --plugin=protoc-gen-ts=.\\node_modules\\.bin\\protoc-gen-ts.cmd --ts_out=.\\proto -I .\\proto .\\proto\\book.proto"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcplus/jsmodules-demo.git"
+  },
+  "keywords": [
+    "grpc",
+    "node",
+    "typescript"
+  ],
+  "author": "jifeng",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arcplus/jsmodules-demo/issues"
+  },
+  "homepage": "https://github.com/arcplus/jsmodules-demo#readme",
+  "devDependencies": {
+    "grpc-tools": "^1.6.6",
+    "grpc_tools_node_protoc_ts": "^2.4.2",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "google-protobuf": "^3.6.1",
+    "grpc": "^1.17.0"
+  }
+}
