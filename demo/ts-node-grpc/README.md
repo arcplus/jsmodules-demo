@@ -8,7 +8,7 @@
    ```
 2. 安装ts依赖
    ```sh
-   npm install typescript ts-node -D
+   npm install typescript ts-node -S
    ```
 3. 添加ts类型生成依赖
    ```sh
@@ -19,13 +19,15 @@
     ```
 5. static-gen-js
     ```sh
-    # use \ as path separator and add cmd extension for plugin if on windows
-    grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./ --grpc_out=./proto --plugin=protoc-gen-grpc=./node_modules/.bin/grpc_tools_node_protoc_plugin -I ./proto ./proto/book.proto
+    npm run genjs
+    # if on windows
+    npm run win:genjs
     ```
 6. static-gen-ts
     ```sh
-    # use \ as path separator and add cmd extension for plugin if on windows
-    protoc --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --ts_out=./proto -I ./proto ./proto/book.proto
+    npm run gents
+    # if on windows
+    npm run win:gents
     ```
 
 - [Typing gRPC with Node & Typescript](https://tomasalabes.me/blog/nodejs/grpc/typescript/2018/07/07/typing-grpc.html)

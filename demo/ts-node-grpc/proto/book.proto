@@ -1,18 +1,25 @@
 syntax = "proto3";
 
 service BookService {
+  // Get a book by id
   rpc GetBook(GetBookRequest) returns (GetBookResponse);
 }
 
+// request a book by id
 message GetBookRequest {
+  // book id
   string id = 1;
 }
 
+// get a book object
 message GetBookResponse {
   Book book = 1;
 }
 
+// Book Object
 message Book {
+  // Book Title
   string title = 1;
+  // Book Author
   string author = 2;
 }
